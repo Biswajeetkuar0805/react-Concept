@@ -1,0 +1,160 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.parent{
+    height: 100vh;
+    width: 100vw;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration{
+    height: 85%;
+    width: 80%;
+    /* background-color: antiquewhite; */
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     border-radius: 20px;
+    /* border: 1px solid black; */
+    overflow: hidden;
+    
+    
+}
+
+.leftpart{
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(180deg, #6a5acd, #00c9ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 35px;
+    color: white;
+    
+    
+}
+
+.lefticon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+.rightpart{
+     width: 50%;
+    height: 100%;
+    background-color: white;
+    padding: 30px;
+    position: relative;   /* IMPORTANT */
+    display: flex;
+    flex-direction: column;
+   
+    
+}
+
+.startedbutton{
+    padding: 20px ;
+    width: 60%;
+    border: none;
+    border-radius: 20px;
+   background: linear-gradient(360deg, #6a5acd, #00c9ff);
+    color: white;
+    font-size: larger;
+    letter-spacing: 2px;
+    font-weight: 300;
+    margin-top: 30px;
+    /* box-shadow: 1px 1px 3px white; */
+}
+
+.headings{
+    color: #6a5acd;
+    margin-bottom: 20px;
+}
+.headings p{
+    margin-top: 5px;
+}
+
+.forms form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.forms input {
+    padding: 12px;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+.forms{
+     flex: 1; 
+}
+
+.checkbox{
+    display: flex;
+    gap: 15px;
+    color: #6a5acd;
+    margin-top: 10px;
+}
+.inputGroup {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+  
+}
+
+.inputGroup input {
+  border: none;
+  outline: none;
+  width: 100%;
+  background: transparent;
+}
+
+.inputIcon {
+  color: gray;
+  font-size: 18px;
+}
+
+.para{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+button{
+    width: 55%;
+    padding: 20px 20px;
+    border-radius: 50px;
+     background: linear-gradient(360deg, #6a5acd, #00c9ff);
+     border: none;
+     color: white;
+     font-size: 1rem;
+}
+.circles {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+}
+.circles div {
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #00c9ff, #6a5acd);
+}
