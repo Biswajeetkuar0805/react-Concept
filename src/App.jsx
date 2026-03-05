@@ -2,10 +2,11 @@
 // import "./App.css";
 // import Conditionalrendering from "./concepts/conditionalrendering/Conditionalrendering";
 // import ProfileCard from "./concepts/taskjsexpression/Profilecard"
-// import './index.css'
+import './index.css'
 
-import HooksHome from "./concepts/hooks/HooksHome";
-import ReactOptimization from "./concepts/optimization/ReactOptimization";
+import CrudOperationHome from "./concepts/crudopertaion/CrudOperationHome";
+// import HooksHome from "./concepts/hooks/HooksHome";
+// import ReactOptimization from "./concepts/optimization/ReactOptimization";
 
 // import ContextApiConcept from "./concepts/contextapi/ContextApiConcept";
 // import HOC from "./concepts/hoc/HOC";
@@ -104,7 +105,8 @@ transition={Zoom}
       {/* <ContextApiConcept/> */}
       {/* <HOC/> */}
       {/* <ReactOptimization/> */}
-      <HooksHome/>
+      {/* <HooksHome/> */}
+      <CrudOperationHome/>
     </>
   );
 }

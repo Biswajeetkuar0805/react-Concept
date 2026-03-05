@@ -90,3 +90,7 @@
 } */ 
 
 @import "tailwindcss";
+
+.active:hover{
+  text-decoration: underline;
+}

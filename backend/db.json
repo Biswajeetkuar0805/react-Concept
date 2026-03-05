@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "subdari",
+      "age": "22",
+      "email": "abc@gmail.com",
+      "password": "134",
+      "dob": "23/3/1986",
+      "city": "bangalore",
+      "gender": "female"
+    }
+  ]
+}
