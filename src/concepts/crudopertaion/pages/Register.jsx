@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import {  useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Register = () => {
 
@@ -12,10 +14,12 @@ const Register = () => {
     city: "",
     gender: ""
   });
-
+    const { username, age, email, password, dob, city, gender } = formData;
+const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value } = e.target;
-
+ 
+    
     setFormData({
       ...formData,
       [name]: value
@@ -24,18 +28,23 @@ const Register = () => {
 
   const handleSubmit =  async(e) => {
     e.preventDefault();
-    console.log(formData);
+  
+ 
 
      //send the data to backend for register purpose
 //   if register done successfully then navigate to login page
 
-   try{
-    await axios.post("http://localhost:3000/users",formData)
-   }catch(error){
-     console.log(error)
-   }
+    try {
 
-    setFormData({
+          if (!username || !age || !email || !password || !dob || !city || !gender) {
+    toast.error("All fields are required ❌",{position:"top-center"});
+    return;
+  }
+
+    await axios.post("http://localhost:3000/users", formData);
+
+    toast.success("Registration Successful 🎉",{position:"top-right"});
+     setFormData({
     username: "",
     age: "",
     email: "",
@@ -44,6 +53,18 @@ const Register = () => {
     city: "",
     gender: ""
   });
+
+    setTimeout(() => {
+      navigate("/login");
+    }, 2000);
+
+  } catch (error) {
+
+    toast.error("Registration Failed",{position:"top-center"});
+
+  }
+  
+   
 
  
 
@@ -65,7 +86,7 @@ const Register = () => {
             type="text"
             name="username"
             placeholder="Username"
-            value={formData.username}
+            value={username}
             onChange={handleChange}
             className="w-full border px-4 py-2 rounded-md focus:ring-2 focus:ring-blue-400"
           />
@@ -75,7 +96,7 @@ const Register = () => {
             type="number"
             name="age"
             placeholder="Age"
-            value={formData.age}
+            value={age}
             onChange={handleChange}
             className="w-full border px-4 py-2 rounded-md focus:ring-2 focus:ring-blue-400"
           />
@@ -85,7 +106,7 @@ const Register = () => {
             type="email"
             name="email"
             placeholder="Email"
-            value={formData.email}
+            value={email}
             onChange={handleChange}
             className="w-full border px-4 py-2 rounded-md focus:ring-2 focus:ring-blue-400"
           />
@@ -95,7 +116,7 @@ const Register = () => {
             type="password"
             name="password"
             placeholder="Password"
-            value={formData.password}
+            value={password}
             onChange={handleChange}
             className="w-full border px-4 py-2 rounded-md focus:ring-2 focus:ring-blue-400"
           />
@@ -104,7 +125,7 @@ const Register = () => {
           <input
             type="date"
             name="dob"
-            value={formData.dob}
+            value={dob}
             onChange={handleChange}
             className="w-full border px-4 py-2 rounded-md focus:ring-2 focus:ring-blue-400"
           />
@@ -112,7 +133,7 @@ const Register = () => {
           {/* City Dropdown */}
           <select
             name="city"
-            value={formData.city}
+            value={city}
             onChange={handleChange}
             className="w-full border px-4 py-2 rounded-md focus:ring-2 focus:ring-blue-400"
           >
@@ -131,7 +152,7 @@ const Register = () => {
                 name="gender"
                 value="Male"
                 onChange={handleChange}
-                checked={formData.gender === "Male"}
+                checked={gender === "Male"}
               /> Male
             </label>
 
@@ -141,7 +162,7 @@ const Register = () => {
                 name="gender"
                 value="Female"
                 onChange={handleChange}
-                checked={formData.gender === "Female"}
+                checked={gender === "Female"}
               /> Female
             </label>
 
@@ -150,18 +171,18 @@ const Register = () => {
                 type="radio"
                 name="gender"
                 value="Other"
-                checked={formData.gender === "Other"}
+                checked={gender === "Other"}
                 onChange={handleChange}
               /> Other
             </label>
           </div>
 
           {/* Submit Button */}
-          <button
+          <button type='submit'
             className="w-full py-2 text-white font-semibold rounded-md 
             bg-gradient-to-r from-indigo-500 to-blue-500 
             hover:from-indigo-600 hover:to-blue-600 transition"
-          >
+             >
             Register
           </button>
 

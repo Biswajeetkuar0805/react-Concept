@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "subdari",
       "age": "22",
       "email": "abc@gmail.com",
@@ -9,6 +9,67 @@
       "dob": "23/3/1986",
       "city": "bangalore",
       "gender": "female"
+    },
+    {
+      "id": "9552",
+      "username": "bisu",
+      "age": "23",
+      "email": "bisu@gmail.com",
+      "password": "123",
+      "dob": "1994-06-08",
+      "city": "Hyderabad",
+      "gender": "Male"
+    },
+    {
+      "id": "2234",
+      "username": "biswajeet",
+      "age": "34",
+      "email": "bisu123@gmail.com",
+      "password": "123",
+      "dob": "2026-03-19",
+      "city": "Bangalore",
+      "gender": "Male"
+    },
+    {
+      "id": "2bbc",
+      "username": "biswajeet1",
+      "age": "36",
+      "email": "bisu1234@gmail.com",
+      "password": "123",
+      "dob": "2026-03-10",
+      "city": "Hyderabad",
+      "gender": "Male"
+    },
+    {
+      "id": "de74",
+      "username": "biswajeet12",
+      "age": "36",
+      "email": "bisu12345@gmail.com",
+      "password": "12345",
+      "dob": "2026-03-24",
+      "city": "Hyderabad",
+      "gender": "Male"
+    },
+    {
+      "id": "d7a7",
+      "username": "biswajeet124",
+      "age": "36",
+      "email": "bisu123456@gmail.com",
+      "password": "123456",
+      "dob": "2026-03-24",
+      "city": "Hyderabad",
+      "gender": "Male"
+    },
+    {
+      "id": "e163",
+      "username": "monu",
+      "age": "23",
+      "email": "monu@gmail.com",
+      "password": "1234",
+      "dob": "2026-03-04",
+      "city": "Hyderabad",
+      "gender": "Male"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

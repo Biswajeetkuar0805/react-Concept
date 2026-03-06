@@ -58,7 +58,7 @@ const Login = () => {
           />
 
           <div
-            className="absolute right-3 top-[42px] cursor-pointer"
+            className="absolute right-3 top-[42px] cursor-pointer"sssss
             onClick={() => setPasswordIcon(!passwordIcon)}
           >
             {passwordIcon ? (

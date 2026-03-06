@@ -5,6 +5,7 @@
 import './index.css'
 
 import CrudOperationHome from "./concepts/crudopertaion/CrudOperationHome";
+import { ToastContainer,Zoom } from 'react-toastify';
 // import HooksHome from "./concepts/hooks/HooksHome";
 // import ReactOptimization from "./concepts/optimization/ReactOptimization";
 
@@ -82,19 +83,7 @@ transition={Zoom}
 />  */}
 
       {/* <HooksHome/>
-<ToastContainer
-position="top-center"
-autoClose={3000}
-hideProgressBar={false}
-newestOnTop={false} 
-closeOnClick={false}
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="dark"
-transition={Zoom}
-/>  */}
+  */}
 
       {/* <AxiosConcept/> */}
 
@@ -107,6 +96,19 @@ transition={Zoom}
       {/* <ReactOptimization/> */}
       {/* <HooksHome/> */}
       <CrudOperationHome/>
+      <ToastContainer
+position="top-center"
+autoClose={3000}
+hideProgressBar={false}
+newestOnTop={false} 
+closeOnClick={false}
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+transition={Zoom}
+/>
     </>
   );
 }

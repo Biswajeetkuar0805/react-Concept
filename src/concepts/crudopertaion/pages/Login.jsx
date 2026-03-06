@@ -1,5 +1,7 @@
+import axios from 'axios';
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const [formdata,setformdata]=useState({
@@ -7,13 +9,45 @@ const Login = () => {
         password:""
     })
 
-    const handleInput=(e)=>{
+    const navigate=useNavigate()
+
+    const handleInput= (e)=>{
       const {name,value}=e.target
       setformdata({...formdata,[name]:value})
     }
 
-    const handleform=(e)=>{
+    const handleform= async(e)=>{
      e.preventDefault()
+      try {
+
+      const res = await axios.get(
+        `http://localhost:3000/users?email=${formdata.email}&password=${formdata.password}`
+      );
+
+      if (res.data.length > 0) {
+
+        // store logged in user
+      localStorage.setItem("jwt_token", JSON.stringify("uffuyhuef"));
+
+      toast.success("Login Successful");
+
+      navigate("/dashboard");
+        navigate("/dashboard");
+
+      } else {
+
+        toast.error("Invalid Email or Password ❌");
+
+      }
+
+    } catch (error) {
+
+      toast.error("Something went wrong");
+
+      console.log(error);
+
+    }
+
      console.log(formdata)
      setformdata({
          email:"",
